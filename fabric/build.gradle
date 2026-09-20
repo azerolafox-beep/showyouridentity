@@ -60,3 +60,15 @@ shadowJar {
 remapJar {
     inputFile.set shadowJar.archiveFile
 }
+
+loom {
+    runs {
+        client2 {
+            client()
+            name("Minecraft Client 2")
+            source(sourceSets.main)
+            runDir("run/client2")
+            programArgs("--username", "Player2")
+        }
+    }
+}
