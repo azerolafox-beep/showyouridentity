@@ -14,6 +14,7 @@ public interface IdentityData {
 
 
     IdentityEntry getIdentity(Player player);
+    IdentityEntry getIdentity(UUID playerUUID);
     void putIdentity(Player player,IdentityEntry entry);
     void removeIdentity(Player player);
     void putMap(Map<UUID, IdentityEntry> map);
