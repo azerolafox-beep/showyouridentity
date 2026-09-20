@@ -39,11 +39,9 @@ public class ChatListenerMixin {
         Minecraft mc = Minecraft.getInstance();
 
         if (profile != null && mc.level != null) {
-            Player player = mc.level.getPlayerByUUID(profile.getId());
-
-            if (player != null) {
-                IdentityData identityData = IdentityData.get(player.level());
-                IdentityEntry entry = identityData.getIdentity(player);
+               if (profile.getId() != null) {
+                IdentityData identityData = IdentityData.get(mc.level);
+                IdentityEntry entry = identityData.getIdentity(profile.getId());
 
                 if (entry != null && entry.getPronouns() != null && !entry.getPronouns().isEmpty()) {
                     ResourceLocation defaultFont = new ResourceLocation("minecraft:default");
